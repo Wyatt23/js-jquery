@@ -22,6 +22,13 @@ Which is easier to write?
 document.querySelectorAll(".hello")
 $(".hello")
 ```
+document.querySelectorAll("sup")
+or
+$("#sup");
+
+el.addEventListener("click", function);
+or
+(el).on("click",function)
 
 ## Selecting DOM elements using Vanilla JS (20min)
 
@@ -116,6 +123,19 @@ jQuery("h2").html("Hello");
 ```
 
 This says "Select every `<h2>` and change its inner HTML to 'Hello'."
+
+//example:
+jQuery("h2") - gives you all the h2
+
+jQuery("h2").html(); -- gives you the first one
+
+jQuery("h2").html("Adrian") -- turns all the inner html inside the h2 to the word "Adrian"//
+
+if you wanted to get the second "h2" innerHTML it would NOT be like []
+it would be a jQuery object so it would be
+jQuery("h2").eq(1).html();
+
+$ = "jQuery" - so you don't have to type it out.
 
 > If you've used jQuery before you've done it with a dollar sign. We'll talk about that in a minute.
 
@@ -236,6 +256,11 @@ $("h2").on("click", function(){
   console.log(this.html());
 });
 ```
+$("h2").on("click", function(){
+  console.log($(this).html());
+});
+
+//PUT PARENTHESES OVER THE "THIS!" -- you would do this to ANYTHING that is NOT a jQuery Element. If you wan to to JQuery stuff (change background color of something etc) to an element that is NOT a jQuery OBJECT you can "wrap it in cash" ($(thing)) and it becomes a jQ object.
 
 Most event listeners have a jQuery method named after them.
 
